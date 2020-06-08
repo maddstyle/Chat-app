@@ -3,10 +3,10 @@ import queryString from "query-string";
 import io from "socket.io-client";
 // import { emit } from 'cluster';
 import './Chat.css';
-import InfoBar from '../InfoBar/InfoBar'
+import InfoBar from '../InfoBar/InfoBar';
+import InfoBar from '../Input/Input';
+
 let socket;
-
-
 
 const Chat = ({ location }) => {
   const [name, setName] = useState("");
@@ -52,13 +52,14 @@ const Chat = ({ location }) => {
     <div className="outerConteiner">
       <div className="container">
         <InfoBar />
-        <input
+        <Input />
+        {/* <input
           value={message}
           onChange={event => setMessage(event.target.value)}
           onKeyPress={event =>
             event.key === "Enter" ? sendMessage(event) : null
           }
-        />
+        /> */}
       </div>
     </div>
   );
