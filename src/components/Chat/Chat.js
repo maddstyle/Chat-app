@@ -4,7 +4,8 @@ import io from "socket.io-client";
 // import { emit } from 'cluster';
 import './Chat.css';
 import InfoBar from '../InfoBar/InfoBar';
-import InfoBar from '../Input/Input';
+import Input from '../Input/Input';
+import Messages from '../Messages/Messages';
 
 let socket;
 
@@ -51,8 +52,9 @@ const Chat = ({ location }) => {
   return (
     <div className="outerConteiner">
       <div className="container">
-        <InfoBar />
-        <Input />
+        <InfoBar room={room} />
+        <Messages messages={messages} />
+        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
         {/* <input
           value={message}
           onChange={event => setMessage(event.target.value)}
