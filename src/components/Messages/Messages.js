@@ -12,4 +12,5 @@ const Messages = ({ messages, name }) => (
   </ScrollToBottom>
 );
 
+
 export default Messages;
